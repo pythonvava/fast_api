@@ -7,7 +7,13 @@ class TaskBase(BaseModel):
 
 
 class TaskCreate(TaskBase):
-    title: Optional[str] = Field(None, example="クリーニングを取りに行く")
+    pass
+
+class TaskCreateResponse(TaskCreate):
+    id: int
+
+    class Config:
+        orm_mode = True
 
 
 class Task(TaskBase):
